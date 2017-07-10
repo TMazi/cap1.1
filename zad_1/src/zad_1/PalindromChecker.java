@@ -19,7 +19,7 @@ public class PalindromChecker {
 		if (text.length() < 2)
 			return true;
 		if (text.toCharArray()[0] == text.toCharArray()[text.length() - 1]) {
-			return isPalindrom(text.substring(1, text.length() - 1));
+			return isPall(text.substring(1, text.length() - 1));
 		}
 		return false;
 	}
