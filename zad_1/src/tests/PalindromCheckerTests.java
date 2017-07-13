@@ -6,10 +6,10 @@ import org.junit.Test;
 
 import zad_1.*;
 
-public class PalindromTests {
+public class PalindromCheckerTests {
 
 	@Test
-	public void testPallindromCorrect() {
+	public void shoulPallindromBeCorrect() {
 
 		String correctPall = "Do geese see God?";
 
@@ -19,7 +19,7 @@ public class PalindromTests {
 	}
 
 	@Test
-	public void testPallindromWrong() {
+	public void shouldPallindromBeWrong() {
 
 		String wrongPall = "I am not a palindrom";
 
@@ -27,9 +27,10 @@ public class PalindromTests {
 
 		assertFalse(res);
 	}
+	
 
 	@Test(expected = WrongInputException.class)
-	public void testEmpty() {
+	public void emptyInputShouldThrowExc() {
 
 		String emptyPall = "";
 
@@ -38,17 +39,17 @@ public class PalindromTests {
 	}
 
 	@Test
-	public void testSingleCorrect() {
+	public void singleInputShouldBeCorrect() {
 		String singlePall = "A";
 
 		boolean res = PalindromChecker.isPalindrom(singlePall);
 
 		assertTrue(res);
-		;
+
 	}
 
 	@Test(expected = WrongInputException.class)
-	public void testExtraCharactersWrong() {
+	public void onlyExtraCharactersShouldThrowExc() {
 		String specialPall = "!!!!!! $$$@@#@# $%%///";
 
 		PalindromChecker.isPalindrom(specialPall);
